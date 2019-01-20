@@ -1,0 +1,72 @@
+    
+
+    <div id="footerText">
+        <p class="text-center">Unofficially Sponsored by Trojan Condoms.</p>
+    </div>
+    
+    <nav class="extraMarginTopBottom100 navbar navbar-expand-lg navbar-light bg-light">
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul id="footerUnorderedList" class="navbar-nav mr-auto">
+            
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Names starting with: <span class="sr-only">(current)</span></a>
+                </li>
+                            
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+        const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "G", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+        for (let i = 0; i < alphabet.length; i++){
+            document.getElementById("footerUnorderedList").innerHTML += '<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' + alphabet[i] + '</a><div id="' + alphabet[i] + '" class="dropdown-menu" aria-labelledby="navbarDropdown"></div></li>';
+        }
+        
+        let namesList = [
+            ["Anna", "Amy", "Abigail", "Amanda", "Alexis", "Alyssa", "Amber", "Amelia", "Andrea", "Allison", "Alexandra", "Audrey", "Alice", "Ariana", "Anne", "Adele", "Ana", "Angela", "Alicia", "Ali", "Adrianna", "Annabelle", "April", "Alison", "Annie", "Abby", "Alma", "Angelina", "Angelica", "Alisha", "Allie", "Aileen", "Angie", "Antonia", "Amelie", "Amalia", "Allyson", "Alexa", "Alina", "Arlene", "Abra", "Abrienne", "Afra", "Aideen", "Aine", "Alex", "Alisa", "Amalie", "Anastasia", "Aoife", "Asha"], 
+            ["Beth", "Brittany", "Barbara", "Barbie", "Beatrice", "Becky", "Bertha", "Betty", "Beth", "Beyonce", "Bianca", "Blake", "Briana", "Brittany", "Bryn"], 
+            ["Carli", "Chelsea", "Caitriona", "Ciara", "Caitlin", "Camila", "Campbell", "Caoimhe", "Caprice", "Cardi", "Cara", "Candy", "Carey", "Carina", "Carmen", "Carol", "Carolina", "Carla", "Carlie", "Caroline", "Carolyn", "Carly", "Carrie", "Casey", "Catalina", "Cathy", "Catriona", "Charlotte", "Charlee", "Charlie", "Charli", "Cher", "Chloe", "Chris", "Cheryl", "Christen", "Christina", "Christie", "Cindy", "Christine", "Claire", "Clare", "Cleo", "Clodagh", "Cora", "Courtney", "Cristina"],
+            ["Daisy", "Dacey", "Daia", "Dallas", "Dana", "Dara", "Daniella", "Daniela", "Danielle", "Daria", "Dasha", "Darlene", "Delia", "Delise", "Deirdre", "Demi", "Destiny", "Diana", "Devin", "Diva", "Dina", "Dora", "Doria", "Donna", "Dory"],
+            ["Elisha", "Eden", "Earla", "Eda", "Edie", "Easton", "Eilise", "Eibhlin", "Eileen", "Elena", "Eliza", "Eliot", "Ella", "Elizabeth", "Ellen", "Elsa", "Ember", "Emma", "Emily", "Emmy", "Erica", "Erma", "Estelle", "Esther", "Eve", "Evelyn", "Eva", "Ezra"],
+            ["Freya", "Fae", "Fabia", "Farah", "Federica", "Felice", "Felicia", "Fatima", "Fernanda", "Filipa", "Fiona", "Florence", "Fran", "Francesca", "Frankie", "Freda", "Freja"],
+            ["Gabi", "Gabriela", "Gabriella", "Gabrielle", "Garcia", "Gena", "Geneva", "Giada", "Gigi", "Georgia", "Gisele", "Giselle", "Giovanna", "Grace", "Gracie", "Gretchen", "Gregoria", "Gwen", "Gucci"],
+            ["Haley", "Haleigh", "Halle", "Hailey", "Halsey", "Hana", "Hannah", "Harley", "Harper", "Hedda", "Helsa", "Heidi", "Helena", "Helen", "Hillary", "Hilda", "Hermione", "Hila", "Holly", "Honey", "Hudson", "Hope"],
+            ["Ina", "Ilisa", "Ilisha", "Ilsa", "Ima", "Inma", "Inga", "Ingrid", "India", "Irina", "Isabelle", "Isabella", "Irene", "Italia", "Iulia", "Ivana", "Izzy", "Ivanka", "Ivonne"],
+            ["Jackie", "Jacey", "Jessica", "Jacqueline", "Jacy", "Jade", "Jamie", "Jamila", "Jana", "Jamaica", "Janet", "Jane", "Janice", "Jasmine", "Janka", "Jay", "Jayla", "January", "Jazz", "Jazmine", "Jenny", "Jena", "Jennifer", "Jennison", "Jess", "Jennie", "Jesse", "Jo", "Jill", "Joanna", "Joanne", "Jocelyn", "Jolie", "Joey", "Jodie", "Johanna", "Jordan", "Joy", "Judith", "Josephine", "July", "Julia", "Juliet", "Julieta", "Juno", "Justice", "Justine", "June"],
+            ["Kacey", "Kailey", "Kady", "Kacie", "Kailee", "Kaitlyn", "Kaitlin", "Karen", "Karla", "Katarina", "Kate", "Katniss", "Katy", "Katya", "Katerina", "Kay", "Katie", "Kathy", "Kayla", "Kaylee", "Keela", "Keara", "Kenya", "Kelly", "Kelsey", "Kerr", "Kia", "Kerry", "Keyla", "Kiki", "Kim", "Kimberly", "Koala", "Kirsten", "Kirstie", "Kyla", "Kourtney", "Kylee", "Kristal", "Kristen", "Kristina", "Kimberly", "Kendall", "Khloe"],
+            ["Lala", "Layla", "Lake", "Laila", "Larissa", "Laura", "Laoise", "Larissa", "Laurel", "Lauren", "Larin", "Lea", "Laurence", "Leah", "Laurie", "Lauryn", "Leah", "Leanna", "Lavender", "Laylah", "Leia", "Leila", "Lena", "Lesley", "Lesli", "Lexie", "Lia", "Letitia", "Lynda", "Linda", "Liliana", "Lilia", "Lida", "Lina", "Lilliana", "Lily", "Lilly", "Lindsey", "Lindsay", "Lior", "Liz", "Lisa", "Lizzie", "Liv", "Lori", "Lorina", "Lorna", "Lori", "Loreen", "Lou", "Lorainne ", "Louisa", "Louise", "Love", "Lucia", "Lulu", "Lucy", "Luna", "Luisianna", "Lynn"],
+            ["Mack", "Marcela", "Martha", "Macy", "Macie", "Mackenzie", "Maddie", "Madeline", "Madge", "Maeve", "Madison", "Madilyn", "Magdalena", "Maia", "Mai", "Maisy", "Malaysia", "Mali", "Manda", "Malia", "Mallorca", "Mercy", "Marcy", "Mar", "Marena", "Marbella", "Margaret", "Marcia", "Margarita", "Marie", "Mary", "Mariah", "Maribel", "Mariana", "Marla", "Marissa", "Masha", "Maurice", "Maya", "Mai", "May", "Maybeth", "Meera", "Megan", "Meg", "Meabh", "Megyn", "Melissa", "Melania", "Mel", "Merry", "Michele", "Mia", "Michelle", "Michaela", "Melanie", "Makayla", "Mirabella", "Mo", "Misha", "Molly", "Mya", "Muriel"],
+            ["Nadia", "Neha", "Natalia", "Naia", "Nara", "Natalie", "Natasha", "Neila", "Nessa", "Nera", "Niamh", "Nicola", "Nicki", "Nicky", "Nicole", "Nicola", "Nicoletta", "Niki", "Nolita", "Naomi", "Nora", "Nora"],
+            ["October", "Olivia", "Octavia", "Oakley", "Oda", "Oana", "Ode", "Odessa", "Odelia", "Oceana", "Olesia", "Olga", "Olive", "Olya", "Olena", "Oprah", "Orna", "Oksana", "Orla"],
+            ["Page", "Palmer", "Paige", "Pamela", "Pandora", "Paris", "Paola", "Paula", "Pauline", "Patricia", "Pasha", "Patty", "Penelope", "Penny", "Peyton", "Phoebe", "Pixie", "Priya", "Puma"],
+            ["Quincy", "Quinta", "Queen", "Quinn"],
+            ["Rachel", "Rachael", "Rafaela", "Rafa", "Raia", "Rana", "Randi", "Ronda", "Rakel", "Ray", "Reed", "Regina", "Rena", "Roxanne", "Rita", "Rhonda", "Ricki", "Rio", "Robin", "Robyn", "Roberta", "Roisin", "Roksana", "Romana", "Rosa", "Rosalia", "Romy", "Rosie", "Roxana", "Rumi", "Ruby", "Ruslana", "Rylie"],
+            ["Selene", "Selena", "Sala", "Sarah", "Sam", "Samuela", "Sandra", "Santa", "Sasha", "Sativa", "Scarlet", "Scarlett", "Scala", "Savanna", "Sela", "Serena", "Serra", "Shannon", "Shanta", "Shakira", "Shayla", "Sharleene", "Sheila", "Shauna", "Sherry", "Shira", "Sia", "Shyanne", "Sierra", "Sidney", "Simona", "Simone", "Sirena", "Siri", "Sinead", "Siobhan", "Sky", "Solita", "Sofia", "Sophina", "Sonia", "Sonya", "Sophie", "Stacy", "Stella", "Sterling", "Sumi", "Susan", "Susanna", "Susannah", "Susie", "Suzanne", "Svetlana", "Sylvia"],
+            ["Taffy", "Talia", "Tania", "Tasha", "Tasmine", "Tara", "Tesla", "Tatiana", "Tatjana", "Taylor", "Tess", "Teresa", "Thalia", "Therese", "Tilda", "Tova", "Toni", "Tracy", "Trish", "Tyra"],
+            ["Ula", "Uma", "Umber", "Utah", "Umber", "Unice"],
+            ["Vaila", "Vanessa", "Valda", "Valentina", "Valencia", "Vali", "Vanille", "Valeria", "Valerie", "Vanita"],
+            ["Wade", "West", "Wallace", "Wenn", "Walker", "Whitney", "Whisper", "Wallace", "Westlyn", "Walda", "Wild", "Wendy", "Wilfreda", "Willow", "Winter", "Win", "Winslet", "Winslow", "Winnie", "Wynn", "Wylie"],
+            ["Xenia", "Xin", "Xandra", "Xena", "Xaviera"],
+            ["Yaba", "Yaroslava", "Yael", "Yasmin", "Yana", "Yelena", "Yseult", "Yolanda", "Yui", "Ysabel", "Yvonne", "Yulia"],
+            ["Zaire", "Zala", "Zafira", "Zaltana", "Zafira", "Zara", "Zia", "Zina", "Zoey", "Zoe", "Zuzanna"],
+        ];
+
+        for (let j = 0; j < namesList.length; j++){
+            for (let k = 0; k < namesList[j].length; k++){
+                document.getElementById(alphabet[j]).innerHTML += '<a class="dropdown-item" href="/puns/name/' + namesList[j][k].toLowerCase() + '">' + namesList[j][k] + '</a>';
+            }
+        }
+    
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>

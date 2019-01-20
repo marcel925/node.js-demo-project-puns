@@ -1,0 +1,96 @@
+<% include partials/header %>
+
+<title>Namepuns.net</title>
+</head>
+
+<% include partials/navbar %>
+
+
+
+
+<div class="container">
+    
+    <h3 class="marginTop50Bottom20"> 
+        Welcome to Namepuns.net
+    </h3>
+
+    <form>
+        <div class="form-group">
+            <label for="search">Search a name to find puns for it</label>
+            <input  type="text" class="form-control extraPaddingTopBottom25" id="search" placeholder="Name" required>
+        </div>
+        <a id="searchButton" href="/puns" class="btn btn-primary extraPaddingRightLeft70">Search</a>
+    </form>
+
+    <div class="marginTop50Bottom20" id="samplePunsHere">
+        <h3>
+            Top 40 name puns:
+        </h3>
+    </div>
+
+    <p>
+        <% puns.forEach((pun) => { %>
+            <div class="punDivs">
+
+                <% include partials/voting %>
+
+                <p class="nameText">
+                    <a href="/puns/name/<%= pun.name.toLowerCase() %>"><%= pun.name %></a> 
+                </p>
+                
+                <p class="descriptionText">
+                    <%= pun.description %>            
+                    <br>
+                    <div class="authorText">
+                        Submitted by <a href="/profile/<%= pun.author.username %>"><%= pun.author.username %></a>  
+                    </div> 
+                </p>
+
+                <% if(currentUser && pun.author.id.equals(currentUser._id)) { %>
+
+                <div id="editAndDeleteButtons">
+                    <a class="btn btn-warning marginRight25px" href="/puns/<%= pun._id %>/edit">
+                        Edit
+                    </a>
+                    
+                    <form id="deleteForm" action="/puns/<%= pun._id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger marginRight25px">Delete</button>
+                    </form>
+                </div>
+                                
+                <% } %>
+    
+            </div>
+            
+        <% }); %>
+    </p>
+
+
+    <p>
+        <a href="/puns/new" class="btn btn-success">Add A New Pun!</a>
+    </p>
+
+    <p>
+        <a href="/puns" class="btn btn-primary">See More Puns!</a>
+    </p>
+
+</div>
+
+
+
+
+<% include partials/footer %>
+
+
+<script>
+
+    document.getElementById("searchButton").onclick = function() {
+        var nameSearched = document.getElementById("search").value;
+        if (nameSearched) {
+            document.getElementById("searchButton").setAttribute("href", "/puns/name/" + nameSearched);
+        } else {
+            document.getElementById("searchButton").setAttribute("href", "/puns");
+        }
+    }
+
+</script>

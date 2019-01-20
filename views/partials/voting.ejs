@@ -1,0 +1,17 @@
+<div class="voting_section">
+    <!-- UPVOTES -->
+    <form class="upVoteForm" action="/puns/<%= pun._id %>/upvote" method="POST">
+        <input type="hidden" name="upvote" value="">
+        <button class="btn btn-success"><i class="fas fa-arrow-up"></i></button>
+    </form>
+
+    <div id="numberOfVotes">
+        <%= pun.totalVotes %>
+    </div>
+    <!-- DOWNVOTES -->
+    <form class="upVoteForm" action="/puns/<%= pun._id %>/downvote" method="POST">
+        <input type="hidden" name="downvote" value="">
+        <button class="btn btn-danger"><i class="fas fa-arrow-down"></i></button>
+    </form>
+  
+</div>

@@ -1,0 +1,62 @@
+<% include partials/header %>
+
+<title>Namepuns.net</title>
+</head>
+
+<% include partials/navbar %>
+
+
+
+<div class="container">
+
+    <div class="extraMarginTopBottom20">
+        <h2> ALL the name puns: </h2>
+    </div>
+
+    <p>
+        <% puns.forEach((pun) => { %>
+            <div class="punDivs">
+
+                <% include partials/voting %>
+
+                <p class="nameText">
+                    <a href="/puns/name/<%= pun.name.toLowerCase() %>"><%= pun.name %></a> 
+                </p>
+                
+                <p class="descriptionText">
+                    <%= pun.description %>            
+                    <br>
+                    <div class="authorText">
+                        Submitted by <a href="/profile/<%= pun.author.username %>"><%= pun.author.username %></a>  
+                    </div> 
+                </p>
+
+                <% if(currentUser && pun.author.id.equals(currentUser._id)) { %>
+
+                <div id="editAndDeleteButtons">
+                    <a class="btn btn-warning marginRight25px" href="/puns/<%= pun._id %>/edit">
+                        Edit
+                    </a>
+                    
+                    <form id="deleteForm" action="/puns/<%= pun._id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger marginRight25px">Delete</button>
+                    </form>
+                </div>
+                            
+                <% } %>
+
+            </div>
+            
+        <% }); %>
+    </p>
+
+    <p>
+        <a class="btn btn-success" href="/puns/new">Add New Pun</a>
+    </p>
+
+    
+</div>
+
+
+
+<% include partials/footer %>

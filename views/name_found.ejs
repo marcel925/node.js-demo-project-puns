@@ -1,0 +1,62 @@
+<% include partials/header %>
+
+<title><%= puns[0].name %> Puns</title>
+</head>
+
+<% include partials/navbar %>
+
+
+
+<div class="container">
+
+    <h1 class="extraMarginTopBottom20"> <%= puns[0].name %> Puns</h1>
+
+    <p>
+        <% puns.forEach((pun) => { %>
+            <div class="punDivs">
+
+                <% include partials/voting %>
+
+                <p class="nameText">
+                    <%= pun.name %>
+                </p>
+
+                <p class="descriptionText">
+                    <%= pun.description %>            
+                    <br>
+                    <div class="authorText">
+                        Submitted by <a href="/profile/<%= pun.author.username %>"><%= pun.author.username %></a>  
+                    </div> 
+                </p>
+
+                <% if(currentUser && pun.author.id.equals(currentUser._id)) { %>
+
+                <div id="editAndDeleteButtons">
+                    <a class="btn btn-warning marginRight25px" href="/puns/<%= pun._id %>/edit">
+                        Edit
+                    </a>
+                    
+                    <form id="deleteForm" action="/puns/<%= pun._id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger marginRight25px">Delete</button>
+                    </form>
+                </div>
+                            
+                <% } %>
+
+            </div>
+            
+        <% }); %>
+    </p>
+
+    <p>
+        Can you think of a better pun for <b><em><%= puns[0].name %></em></b> ? 
+        <p>
+            <a class="btn btn-success" href="/puns/new">Add it here!</a>
+        </p>
+    </p>
+
+</div>
+
+
+
+<% include partials/footer %>

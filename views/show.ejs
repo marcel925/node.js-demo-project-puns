@@ -1,0 +1,35 @@
+<% include partials/header %>
+
+<title>Namepuns.net</title>
+</head>
+
+<% include partials/navbar %>
+
+
+<div class="container">
+    <p>
+        <a class="btn btn-info" href="/">
+            Homepage
+        </a>
+    </p>
+    
+    <p class="nameText">
+        <%= pun.name %>
+    </p>
+
+    <% include partials/voting %>
+        
+    <div class="descriptionText">
+        <%= pun.description %>            
+        <br>
+        <div class="authorText">
+            Submitted by <a href="/profile/<%= pun.author.username %>"><%= pun.author.username %></a>  
+        </div> 
+    </div>
+    
+
+</div>
+
+
+
+<% include partials/footer %>

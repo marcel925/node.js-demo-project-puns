@@ -1,0 +1,49 @@
+<% include partials/header %>
+
+<title>Namepuns.net</title>
+</head>
+
+<% include partials/navbar %>
+
+
+
+<div class="container extraMarginTopBottom50">
+
+    <h5 class="extraMarginTopBottom20"> 
+        No puns found for <b><%= puns.name %></b>... :(
+    </h5>
+
+    <h5 class="extraMarginTopBottom20"> 
+        Can you think of a good one? 
+    </h5>
+
+    <% if (!currentUser) { %>
+                
+    <a href="/puns/new" class="btn btn-success btn-lg extraMarginTopBottom20">Add New Pun</a>
+
+    <% } else { %>
+
+    <div class="container extraMarginTopBottom50">
+            
+        <h3 class="extraMarginTopBottom20">Create a New Pun</h3>
+
+        <form action="/puns" method="POST">
+            <div class="form-group input-group-lg">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="usernameInput" name="name" placeholder="Name" value="<%= puns.name %>" required>
+            </div>
+            <div class="form-group input-group-lg">
+                    <label for="description">Pun</label>
+                    <input type="text" class="form-control" id="passwordInput" name="description" placeholder="Description">
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg extraPaddingRightLeft70 extraMarginTopBottom20">Submit</button>
+        </form>
+           
+    </div>
+    <% } %>
+
+</div>
+
+
+
+<% include partials/footer %>

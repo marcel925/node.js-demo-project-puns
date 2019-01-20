@@ -1,0 +1,82 @@
+<% include partials/header %>
+
+<title>Namepuns.net</title>
+</head>
+
+<% include partials/navbar %>
+
+
+
+<div class="container marginTop50Bottom20">
+    <p>
+        <h4>
+            Profile information for <%= puns[0].author.username %>:
+        </h4>
+    </p>
+
+    <p>
+        Total Puns Submitted = <%= length %>
+    </p>
+
+    <p>
+        Total Upvotes = <%= upvotesTotal %>
+    </p>
+        
+    <p>
+        Total Downvotes = <%= downvotesTotal %>
+    </p>
+    <p>
+        Level: Pun Master!
+    </p>
+
+    <div class="marginTop50Bottom20">
+        <h3> Puns submitted by <b><%= puns[0].author.username %>:</b> </h3>
+    </div>
+
+    <p>
+        <% puns.forEach((pun) => { %>
+            <div class="punDivs">
+
+                <% include partials/voting %>
+
+                <p class="nameText">
+                    <%= pun.name %>
+                </p>
+                
+                <p class="descriptionText">
+                    <%= pun.description %>            
+                    <br>
+                    <div class="authorText">
+                        Submitted by <%= pun.author.username %> 
+                    </div> 
+                </p>
+
+                <% if(currentUser && pun.author.id.equals(currentUser._id)) { %>
+
+                <div id="editAndDeleteButtons">
+                    <a class="btn btn-warning marginRight25px" href="/puns/<%= pun._id %>/edit">
+                        Edit
+                    </a>
+                    
+                    <form id="deleteForm" action="/puns/<%= pun._id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger marginRight25px">Delete</button>
+                    </form>
+                </div>
+                            
+                <% } %>
+
+            </div>
+            
+        <% }); %>
+    </p>
+
+    <p>
+        <a class="btn btn-success" href="/puns/new">Add New Pun</a>
+    </p>
+
+    
+</div>
+
+
+
+<% include partials/footer %>
